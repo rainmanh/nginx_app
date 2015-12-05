@@ -1,0 +1,9 @@
+[all:vars]
+env=production
+
+[webservers]
+54.146.134.51
+
+[application]
+54.144.199.212
+54.159.255.31

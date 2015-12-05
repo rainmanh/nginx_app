@@ -1,0 +1,23 @@
+---
+- name: upgrade all packages
+  apt: upgrade=full
+
+- name: create Group gogroup
+  group: name=gogroup state=present
+  
+- name: create User
+  user: name=gouser group=gogroup shell=/bin/bash 
+
+- name: Create Directory Previous Transferring Application
+  file: path=/opt/goapp/ state=directory mode=0755
+
+- name: Copy Application to Remote Servers
+  copy: src=opt/goapp/web_app dest=/opt/goapp/web_app owner=gouser group=gogroup mode=755
+
+- name: Copy StartUp Script to RemoteServer
+  copy: src=opt/goapp/start.sh dest=/opt/goapp/start.sh owner=gouser group=gogroup mode=755
+
+- name: Start Application
+  shell: "start-stop-daemon --start --quiet --pidfile /var/run/goapp --exec  /opt/goapp/start.sh"
+  args:
+   executable: "/bin/bash"
