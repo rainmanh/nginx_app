@@ -14,9 +14,9 @@ The build has been parametrised as explained below..
 
 There are you set of variables you can currently modify:
 
-Environmental Variables
+## Environmental Variables
 
-This will define which are the webserver and Application Server Nodes
+These will define who are the webserver and the Application Server Nodes
 
 To update the environmental variables so to add or remove servers simply edit the files within the **inventories** directory:
   * production
@@ -35,9 +35,10 @@ env=production
 54.144.199.212
 54.159.255.31
 ```
-Application Server Variables
 
-These will define the Application Servers as defined in the LoadBalancer
+## Application Server Variables
+
+These will define who are the Application Servers for  the LoadBalancer
 
 To update or modify the target Application Servers defined in nginx you have the following files within the **vars** directory:
   * production
