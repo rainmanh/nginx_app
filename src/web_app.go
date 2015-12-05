@@ -1,4 +1,5 @@
 //GoLang Test Code
+//Another Comment
 
 package main
 import (
