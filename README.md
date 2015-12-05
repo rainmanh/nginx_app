@@ -2,7 +2,12 @@ Ansible Playbook for A Go Lang  Tiny Application
 ============================
 
 This is a simple test playbook written for the Ubuntu platform.
-This playbook has been written for educational purpose with the purpose of testing NGINX against a Listener Written in go.
+
+This playbook has been written for educational purpose with the purpose of testing NGINX against a Listener Written in go Lang.
+
+The Instances or servers have been provisioned using AWS so the code is using as a parameter a Private key, but there are many other ways of doing this.
+On this example I will purely work on AWS infrastructure base.
+
 This Playbook can install both:
   * A nginx server
   * A Listener written in GoLang to Application Servers.
@@ -68,7 +73,7 @@ ansible-playbook -i inventories/production nginx.yml -l webservers --private-key
 2. To install the Go Listener Application execute the following command:
 
 ```
-ansible-playbook -i inventories/<ENVIRONMENT> app.yml -l application	 --private-key=</path/to/key/if/required/>
+ansible-playbook -i inventories/<ENVIRONMENT> app.yml -l application --private-key=</path/to/key/if/required/>
 ```
 
 Example:
