@@ -2,7 +2,6 @@
 //Another Comment
 //Another Comment
 
-package main
 import (
         "fmt"
         "net/http"
