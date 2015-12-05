@@ -1,4 +1,4 @@
-Playbook for Go Tiny Application
+Playbook for A Go Lang  Tiny Application
 ============================
 
 This is a simple test playbook written for the Ubuntu platform.
