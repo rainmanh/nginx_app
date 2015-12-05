@@ -1,3 +1,5 @@
+//GoLang Test Code
+
 package main
 import (
         "fmt"
