@@ -14,10 +14,7 @@
 - name: Copy Application to Remote Servers
   copy: src=opt/goapp/web_app dest=/opt/goapp/web_app owner=gouser group=gogroup mode=755
 
-- name: Copy StartUp Script to RemoteServer
-  copy: src=opt/goapp/start.sh dest=/opt/goapp/start.sh owner=gouser group=gogroup mode=755
-
 - name: Start Application
-  shell: "start-stop-daemon --start --quiet --pidfile /var/run/goapp --exec  /opt/goapp/start.sh"
+  shell: "start-stop-daemon --start --quiet -m -b -v --pidfile /var/run/goapp --exec  /opt/goapp/web_app"
   args:
    executable: "/bin/bash"
