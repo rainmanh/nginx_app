@@ -1,24 +1,11 @@
 nginx Cookbook
 ==============
-TODO: Enter the cookbook description here.
-
-e.g.
-This cookbook makes your favorite breakfast sandwich.
-
-Requirements
-------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
-
-e.g.
-#### packages
-- `toaster` - nginx needs toaster to brown your bagel.
-
+This cookbook runs a basic installation of NGINX and sets the Webserver as a LoadBalancer for 2 Application Servers.
 
 Attributes
 ----------
 
 The cookbook got as attributes the Application Servers Containing the GoLang Web Application.
-
 
 ```
 default[:nginx][:application1] = '54.144.199.212:848'
