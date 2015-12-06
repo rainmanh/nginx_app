@@ -20,29 +20,26 @@ So..
 
 7. Create 2 jobs in jenkins
 
+7.1 a job which will build the code (golangtest in the example) in jenkins called: "upstream"
+
+7.2 a job which will be triggered if the code is built successfully and it will transfer the new file to the servers (golang_filetransfer in the example) in jenkins called "downstream"
+
+
 7.1 a job which will build the code (golangtest in the example)
 
-7.2 a job which will be triggered if the code is built successfully and it will transfer the new file to the servers (golang_filetransfer in the example)
-
-
-7.1 a job which will build the code
-
 * I introduce the github project: https://github.com/rainmanh/nginx_app
-* Defined the git repository
+* Define the git repository (the content will be pulled from master so everything will be left by default)
 * There are 2 ways of triggering the build:
   *  When something changes in the Remote Repo the build will be triggered
-  *  Setting up a Poll we say... every minute and when a change has been detected it will pull the changes.
+  *  Setting up a Poll we say... every minute and when a change has been detected it will pull the changes.(I am using the second one)
 
-* there is an script that will copy the SOURCE code from the repo into a temp directory where it will be build.
-*  If the job has been flagged as succesful it will trigger the build of the other job (golang_filetransfer) so it will transfer the newly built files otherwise it will break the process.(It might email ..etc...)
+* After a change has triggered the build, one script will copy the SOURCE code from the repo into a temp directory whereit's going to get built.
+*  If the job has been flagged as successful it will trigger the build of the downstream job (golang_filetransfer) so it will transfer the newly built files otherwise it will break the process.(It might email ..etc...)
 
 ##### Example of a build failure
 
 ![Code Failure](https://github.com/rainmanh/nginx_app/blob/master/images/code_falire.png)
 
-
-
-7.2 A job which will be triggered if the code is built successfully and it will transfer the new file to the servers
 
 ##### Example of a successful build
 
@@ -50,6 +47,17 @@ So..
 
 
 ![success_build_2](https://github.com/rainmanh/nginx_app/blob/master/images/success_build_3.png)
+
+
+7.2 (golang_filetransfer) So a job which will be triggered if the code is built successfully and it will transfer the new file to the servers
+* the job got defined the condition of running the build if "upstream" golangtest job is successful.
+* the job got a script that will copy the built code from Upstream (golangtest) to the target servers.
+⋅⋅* it will stop the process in the remote server
+⋅⋅* it will copy the new code
+⋅⋅* it will start the process in the remote server
+⋅⋅* and it will finally run a quick test.
+
+
 
 ##### Example of Code being transfered after a Successful build on the downstream (golangtest)
 
