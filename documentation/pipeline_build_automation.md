@@ -7,7 +7,8 @@ For the purpose of this exercise I am using the following:
 * github webhooks
 * Golang
 
-So..
+## Instructions
+
 1. install golang in the jenkins box
 
 2. install the github plugin in jenkins 
@@ -25,7 +26,7 @@ So..
 7.2 a job which will be triggered if the code is built successfully and it will transfer the new file to the servers (golang_filetransfer in the example) in jenkins called "downstream"
 
 
-7.1 a job which will build the code (golangtest in the example)
+### 7.1 a job which will build the code (golangtest in the example)
 
 * I introduce the github project: https://github.com/rainmanh/nginx_app
 * Define the git repository (the content will be pulled from master so everything will be left by default)
@@ -49,7 +50,7 @@ So..
 ![success_build_2](https://github.com/rainmanh/nginx_app/blob/master/images/success_build_3.png)
 
 
-7.2 (golang_filetransfer) So a job which will be triggered if the code is built successfully and it will transfer the new file to the servers
+### 7.2 (golang_filetransfer) So a job which will be triggered if the code is built successfully and it will transfer the new file to the servers
 * the job got defined the condition of running the build if "upstream" golangtest job is successful.
 * the job got a script that will copy the built code from Upstream (golangtest) to the target servers.
 ⋅⋅* it will stop the process in the remote server
