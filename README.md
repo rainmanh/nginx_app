@@ -14,6 +14,6 @@ The root directory also got the following:
 * A "documentation" section where I demonstrate how the LoadBalancer (nginx) works and Also and overview on HOW to automate the build and deployment of the GoLang Application into the target servers
 * The Source code for the Application Server Written in GoLang
 
-When writing this cookbooks/playbooks I consider whether to build the code on the fly at installation time or not. In the end I decided to use the pre-compiled code for security reasons. 
-Traditionally Production environment shouldn't have any sort of compiling tools but it should be a minimal installation with all the basic requirements, reason it's always security and to let hackers the less amount of tools possible if they ever break in the system.
+When writing this cookbooks/playbooks I considered whether to build the code on the fly at installation time or not. In the end I decided to use the pre-compiled code for security reasons. 
+Traditionally Production environments shouldn't have any sort of compiling tools but it should be a minimal installation with all the basic requirements, reason it's always security and to let hackers the less amount of tools possible if they ever break into the system.BUT this is an approach valid as many others but I must say it's a conservative one.
 
