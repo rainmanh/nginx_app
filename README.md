@@ -9,8 +9,8 @@ The Instances or servers have been provisioned using AWS so the code is using as
 On this example I will purely work on AWS infrastructure base.
 
 This Playbook can install both:
-  * A nginx server
-  * A Listener written in GoLang to Application Servers.
+  * nginx server
+  * 2 Listeners written in GoLang acting as Application Servers.
   
 The build has been parametrised as explained below..
   
