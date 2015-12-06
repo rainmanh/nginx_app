@@ -1,0 +1,12 @@
+upstream goapp {
+	server <%= node[:nginx][:application1] %>;
+	server <%= node[:nginx][:application2] %>;
+}
+
+server {
+	listen 80;
+
+	location / {
+		proxy_pass http://goapp;
+	}
+}

@@ -1,0 +1,11 @@
+---
+- name: upgrade all packages
+  apt: upgrade=full
+
+- name: install nginx
+  apt: pkg=nginx state=latest update_cache=true
+
+- name: install default site nginx
+  template: src=etc/nginx/sites-available/default.j2 dest=/etc/nginx/sites-available/default mode=0600 owner=root group=root
+  notify: reload nginx
+
