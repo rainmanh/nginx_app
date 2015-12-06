@@ -2,9 +2,11 @@ Proof of the log Balancer Working
 ============================
 
 
-Testing what is the current state for the balancer.
+Testing the current state for the balancer and it's funcionality.
+
 All the below will show Private IPs but the different instance/server are communicated through PUBLIC IPs.
-I am running a "curl" command in the NGINX box to the localost as the NGINX server is listening on all the interafaces for TCP port 80
+
+I am running a "curl" command in the NGINX box to the localhost as the NGINX server is listening on all the interafaces for TCP port 80
 
 ```
 curl localhost
