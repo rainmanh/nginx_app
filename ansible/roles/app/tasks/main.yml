@@ -14,7 +14,10 @@
 - name: Copy Application to Remote Servers
   copy: src=opt/goapp/web_app dest=/opt/goapp/web_app owner=gouser group=gogroup mode=755
 
+- name: Copy web_app_init.sh to init.d  
+  copy: src=opt/goapp/web_app_init.sh  dest=/etc/init.d/web_app_init.sh owner=gouser group=gogroup mode=755
+
 - name: Start Application
-  shell: "start-stop-daemon --start --quiet -m -b -v --pidfile /var/run/goapp --exec  /opt/goapp/web_app"
+  shell: "update-rc.d web_app_init.sh defaults;/etc/init.d/web_app_init.sh start"
   args:
    executable: "/bin/bash"
