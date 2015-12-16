@@ -8,6 +8,11 @@ I have tested this setup using 2 different approaches:
 * Ansible (containing the playbooks relevant to this setup) (Ansible is a PUSH methodology)
 * Chef (containing the cookbooks relevant to this setup) (CHEF uses a PULL methodology)
 
+For provisioning the Infrastructure I have also chosen 2 different approaches (below) which can be found on the provisioning directory:
+
+* aws cli
+* CloudFormation
+
 
 The root directory also got the following: 
 
