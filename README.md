@@ -12,6 +12,7 @@ For provisioning the Infrastructure I have also chosen 2 different approaches (b
 
 * aws cli
 * CloudFormation
+* Terraform
 
 
 The root directory also got the following: 
