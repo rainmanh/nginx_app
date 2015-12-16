@@ -112,4 +112,4 @@ use the `terraform show` command.
 State path: terraform.tfstate
 ```
 
-Files can be found in directory : *terrafform*
+Files can be found in directory : *terraform*
