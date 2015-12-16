@@ -1,0 +1,69 @@
+{
+  "AWSTemplateFormatVersion" : "2015-12-16",
+  "Description" : "Cloudformation Test",
+  "Resources" : {
+    "WebServer1": {
+      "Type": "AWS::EC2::Instance",  
+      "Properties": {
+        "Tags" : [
+            { "Key" : "Name", "Value" : "Web1" }
+        ],
+        "ImageId"            : "ami-691cdc0a",
+        "InstanceType"       : "m1.small",
+        "KeyName"            : "keys",
+        "NetworkInterfaces" : [{
+          "AssociatePublicIpAddress" : "true",
+          "DeviceIndex"              : "0",
+          "DeleteOnTermination"      : "true",
+          "SubnetId"                 : "subnet-1234agc",
+          "GroupSet"                 : [ "sg-1234agc" ]
+        }]
+      }  
+    },
+
+    "Application1": {
+      "Type": "AWS::EC2::Instance",  
+      "Properties": {
+        "Tags" : [
+            { "Key" : "Name", "Value" : "App1" }
+        ],
+        "ImageId"            : "ami-691cdc0a",
+        "InstanceType"       : "m1.small",
+        "KeyName"            : "keys",
+        "NetworkInterfaces" : [{
+          "AssociatePublicIpAddress" : "true",
+          "DeviceIndex"              : "0",
+          "DeleteOnTermination"      : "true",
+          "SubnetId"                 : "subnet-1234agc",
+          "GroupSet"                 : [ "sg-1234agc" ]
+        }]
+      }  
+    },
+    "Application2": {
+      "Type": "AWS::EC2::Instance",  
+      "Properties": {
+        "Tags" : [
+            { "Key" : "Name", "Value" : "App2" }
+        ],
+        "ImageId"            : "ami-691cdc0a",
+        "InstanceType"       : "m1.small",
+        "KeyName"            : "keys",
+        "NetworkInterfaces" : [{
+          "AssociatePublicIpAddress" : "true",
+          "DeviceIndex"              : "0",
+          "DeleteOnTermination"      : "true",
+          "SubnetId"                 : "subnet-1234agc",
+          "GroupSet"                 : [ "sg-1234agc" ]
+        }]
+      }  
+    }
+  
+  }
+}
+
+
+
+
+
+
+
